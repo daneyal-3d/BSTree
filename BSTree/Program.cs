@@ -25,7 +25,7 @@ class BSTree<T> where T : IComparable<T>
     }
     
     
-    public void DisplayInOrder(Node<T> node)
+    private void DisplayInOrder(Node<T> node)
     {
         if (node != null)
         {
