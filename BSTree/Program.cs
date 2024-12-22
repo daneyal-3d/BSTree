@@ -67,6 +67,25 @@ class BSTree<T> where T : IComparable<T>
     {
         insertItem(item, ref root);
     }
+    
+    
+    public int Height()
+    {
+        return CalculateHeight(root);
+    }
+
+    private int CalculateHeight(Node<T> node)
+    {
+        if (node == null)
+            return -1; // Height of an empty tree is -1
+
+        int leftHeight = CalculateHeight(node.Left);
+        int rightHeight = CalculateHeight(node.Right);
+
+        return 1 + Math.Max(leftHeight, rightHeight);
+    }
+    
+    
 }
 
 class Program
@@ -85,6 +104,8 @@ class Program
         tree.InsertItem(3); // to test repeated value
         
         tree.Display();
+        Console.WriteLine("\nHeight of the tree: " + tree.Height());
+        
 
         // Output accumulated messages
         // Console.WriteLine(buffer.ToString());
