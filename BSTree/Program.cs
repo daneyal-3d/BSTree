@@ -86,6 +86,74 @@ class BSTree<T> where T : IComparable<T>
     }
     
     
+    // Delete a node using the following code
+    
+    public void Delete(T item)
+    {
+        root = DeleteNode(root, item);
+    }
+
+    private Node<T> DeleteNode(Node<T> node, T item)
+    {
+        if (node == null)
+        {
+            Console.WriteLine($"Item {item} not found in the tree.");
+            return null;
+        }
+
+        if (item.CompareTo(node.Data) < 0)
+        {
+            // Item is in the left subtree
+            node.Left = DeleteNode(node.Left, item);
+        }
+        else if (item.CompareTo(node.Data) > 0)
+        {
+            // Item is in the right subtree
+            node.Right = DeleteNode(node.Right, item);
+        }
+        else
+        {
+            // Node to be deleted found
+            Console.WriteLine($"Deleting {item}");
+
+            // Case 1: No children (leaf node)
+            if (node.Left == null && node.Right == null)
+            {
+                return null;
+            }
+
+            // Case 2: One child
+            if (node.Left == null)
+            {
+                return node.Right;
+            }
+            else if (node.Right == null)
+            {
+                return node.Left;
+            }
+
+            // Case 3: Two children
+            // Find the in-order successor (smallest value in the right subtree)
+            Node<T> successor = FindMin(node.Right);
+            node.Data = successor.Data; 
+
+            // Delete the in-order successor
+            node.Right = DeleteNode(node.Right, successor.Data);
+        }
+
+        return node;
+    }
+
+    private Node<T> FindMin(Node<T> node)
+    {
+        while (node.Left != null)
+        {
+            node = node.Left;
+        }
+        return node;
+    }
+    
+    
 }
 
 class Program

@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Permutation", "Permutation\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSTree", "BSTree\BSTree.csproj", "{B8D6CE3A-07DA-4672-9A9B-50B6540D382F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmTree", "FilmTree\FilmTree.csproj", "{640B51A4-0DC4-4815-9343-39D6372BAFF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{B8D6CE3A-07DA-4672-9A9B-50B6540D382F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8D6CE3A-07DA-4672-9A9B-50B6540D382F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8D6CE3A-07DA-4672-9A9B-50B6540D382F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{640B51A4-0DC4-4815-9343-39D6372BAFF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{640B51A4-0DC4-4815-9343-39D6372BAFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{640B51A4-0DC4-4815-9343-39D6372BAFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{640B51A4-0DC4-4815-9343-39D6372BAFF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
